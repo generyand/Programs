@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-image: url(Shiny\ Overlay.svg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  box-shadow: 0 5px 15px #24242493;
+  position: relative;
+  border-radius: 10px;
+  transition: cubic-bezier(0.26, 0.84, 0.01, 1.15) 1s;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 15px #24242493;
+}
+
+.wrapper {
+  width: inherit;
+}
+
+.wrapper1 {
+  height: 250px;
+  background-image: url("Nature Background.jpg");
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.line {
+  border-bottom: 1px solid gray;
+  margin-bottom: 5px;
+}
+
+.wrapper2 {
+  text-align: center;
+  font-size: 15px;
+  padding: 5rem 3rem 12rem;
+  height: 250px;
+  background: white;
+  border-radius: 0 0 10px 10px;
+  color: rgb(73, 73, 73);
+}
+
+.wrapper2 p {
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+#profile {
+  position: absolute;
+  width: 35%;
+  border-radius: 50%;
+  margin: 0;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+}
+
+.fonts {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 25px;
+  padding: 0 40px 0px;
+}
+
+i,
+i:visited {
+  transition: .3s;
+  color: rgb(73, 73, 73);
+}
+
+i:hover {
+  color: rgba(158, 91, 0, 1);
+  cursor: pointer;
+}

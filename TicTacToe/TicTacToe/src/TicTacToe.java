@@ -19,22 +19,39 @@ public class TicTacToe {
 
         printGameBoard(gameBoard);
 
-        while (true) {
+        boolean stillPlay = true;
+        while (stillPlay) {
             Scanner scan = new Scanner(System.in);
 
             System.out.println("Enter your placements (1-9):");
             int playerPos = scan.nextInt();
+            scan.nextLine();
             while (playerPositions.contains(playerPos) || computerPositions.contains(playerPos)) {
                 System.out.println("Position taken! Enter a correct position");
                 playerPos = scan.nextInt();
+                scan.nextLine();
             }
 
             placePiece(gameBoard, playerPos, "player");
 
             String result = checkWinner();
-            if(result.length() > 0) {
+            if (result.length() > 0) {
                 System.out.println(result);
-                break;
+                // break;
+                System.out.println("Do you want to play again? Y/N");
+                String playAgain = scan.nextLine();
+                while (!playAgain.equalsIgnoreCase("Y") && !playAgain.equalsIgnoreCase("N")) {
+                    System.out.println("Invalid. Please try again...");
+                    playAgain = scan.nextLine();
+                }
+
+                if (playAgain.equalsIgnoreCase("Y")) {
+                    stillPlay = true;
+                }
+                if (playAgain.equalsIgnoreCase("N")) {
+                    stillPlay = false;
+                    break;
+                }
             }
 
             Random rand = new Random();
@@ -48,11 +65,25 @@ public class TicTacToe {
             printGameBoard(gameBoard);
 
             result = checkWinner();
-            if(result.length() > 0) {
+            if (result.length() > 0) {
                 System.out.println(result);
-                break;
+                // break;
+                System.out.println("Do you want to play again? Y/N");
+                String playAgain = scan.nextLine();
+                while (!playAgain.equalsIgnoreCase("Y") && !playAgain.equalsIgnoreCase("N")) {
+                    System.out.println("Invalid. Please try again...");
+                    playAgain = scan.nextLine();
+                }
+
+                if (playAgain.equalsIgnoreCase("Y")) {
+                    stillPlay = true;
+                }
+                if (playAgain.equalsIgnoreCase("N")) {
+                    stillPlay = false;
+                    break;
+                }
             }
-            
+
         }
 
     }
@@ -133,8 +164,8 @@ public class TicTacToe {
         winning.add(cross1);
         winning.add(cross2);
 
-        for(List l: winning) {
-            if(playerPositions.containsAll(l)) {
+        for (List l : winning) {
+            if (playerPositions.containsAll(l)) {
                 return "You won!";
             } else if (computerPositions.containsAll(l)) {
                 return "You lost";

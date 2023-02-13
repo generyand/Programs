@@ -58,15 +58,20 @@ public class Main {
             System.out.println("Do you wanna play again? yes/no");
             String playAgain = scan.nextLine();
 
-            if (playAgain.equals("yes")) {
-                quit = false;
-            } else if (playAgain.equals("no")) {
-                quit = true;
-            } else {
-                System.out.println("invalid key");
+            while (!playAgain.equals("yes") && !playAgain.equals("no")) {
+                System.out.println("Invalid. Please try again...");
+                playAgain = scan.nextLine();
+
             }
 
-            System.out.println();
+            if (playAgain.equals("yes")) {
+                quit = false;
+            }
+
+            if (playAgain.equals("no")) {
+                quit = true;
+            }
+
             System.out.println();
         }
 
