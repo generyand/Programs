@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Bato2Pick {
+public class RPSTest2 {
     
     public static void main(String[] args) {
 
